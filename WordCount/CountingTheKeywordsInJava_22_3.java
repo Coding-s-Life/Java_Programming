@@ -27,44 +27,47 @@ public class CountingTheKeywordsInJava_22_3 {
 	static final Set<String> setOfKeywords = new TreeSet<String>(Arrays.asList(keywords));
 
 	public static void main(String[] args) {
-		File javaFile = new File(args[0]);
-		int countOfKeywords = 0;
-		try {
-			BufferedReader br = new BufferedReader(new FileReader(javaFile));
-			String str = null;
-			StringTokenizer tokens = null;
-			Set<String> setOfKeywordsFound = new TreeSet<String>();
-			Set<String> setOfTokensFound = new TreeSet<String>();
+		if (!args[0].isEmpty() && args[0].endsWith(".java")) {
+			File javaFile = new File(args[0]);
+			int countOfKeywords = 0;
+			try {
+				BufferedReader br = new BufferedReader(new FileReader(javaFile));
+				String str = null;
+				StringTokenizer tokens = null;
+				Set<String> setOfKeywordsFound = new TreeSet<String>();
+				Set<String> setOfTokensFound = new TreeSet<String>();
 
-			while ((str = br.readLine()) != null) {
-				tokens = new StringTokenizer(str, " .,:;()[]{}");
-				String nextToken = tokens.nextToken();
-				System.out.println(nextToken);
+				while ((str = br.readLine()) != null) {
+					tokens = new StringTokenizer(str, " .,:;()[]{}");
+					String nextToken = tokens.nextToken();
+					System.out.println(nextToken);
 
-				if (nextToken != null) {
-					setOfTokensFound.add(nextToken);
+					if (nextToken != null) {
+						setOfTokensFound.add(nextToken);
+					}
 				}
-			}			
-			br.close();
+				br.close();
 
-			for (String nextToken : setOfTokensFound) {
-				if (setOfKeywords.contains(nextToken)) {
-					setOfKeywordsFound.add(nextToken);
-					countOfKeywords++;
+				for (String nextToken : setOfTokensFound) {
+					if (setOfKeywords.contains(nextToken)) {
+						setOfKeywordsFound.add(nextToken);
+						countOfKeywords++;
+					}
 				}
-			}
-			System.out.println("\n" + countOfKeywords + " Keywords are found: ");
-			for (String keyword : setOfKeywordsFound) {
-				System.out.println(keyword);
+				System.out.println("\n" + countOfKeywords + " Keywords are found: ");
+				for (String keyword : setOfKeywordsFound) {
+					System.out.println(keyword);
+				}
+
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		} else {
+			System.out.println();
 		}
-
 	}
-
 }
