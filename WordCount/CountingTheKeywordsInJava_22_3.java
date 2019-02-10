@@ -67,7 +67,7 @@ public class CountingTheKeywordsInJava_22_3 {
 			}
 
 		} else {
-			System.out.println();
+			System.out.println("Please specify the java input file for reading the keywords in it, for running this program.");
 		}
 	}
 }
