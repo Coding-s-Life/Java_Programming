@@ -65,7 +65,6 @@ public class CountingTheKeywordsInJava_22_3 {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-
 		} else {
 			System.out.println("Please specify the java input file for reading the keywords in it, for running this program.");
 		}
