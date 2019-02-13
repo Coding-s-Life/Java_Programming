@@ -58,11 +58,9 @@ public class CountingTheKeywordsInJava_22_3 {
 				for (String keyword : setOfKeywordsFound) {
 					System.out.println(keyword);
 				}
-
-			}catch (IOException e) {
-				// TODO Auto-generated catch block
+			}catch (FileNotFoundException e) {
 				e.printStackTrace();
-			} catch (StringIndexOutOfBoundsException e) {
+			} catch (IOException e) {
 				e.printStackTrace();
 			} 
 		} else {
