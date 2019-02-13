@@ -62,7 +62,7 @@ public class CountingTheKeywordsInJava_22_3 {
 			}catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			} catch (IndexOutOfBoundsException e) {
+			} catch (StringIndexOutOfBoundsException e) {
 				e.printStackTrace();
 			} 
 		} else {
