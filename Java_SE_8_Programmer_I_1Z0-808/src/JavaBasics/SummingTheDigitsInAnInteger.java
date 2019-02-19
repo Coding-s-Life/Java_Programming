@@ -13,6 +13,9 @@ public class SummingTheDigitsInAnInteger {
 	public static void main(String[] args) {
 		int k = 12311;
 		int result = 0;
+		/*
+		 * Here we loop to sum the result if value of k is more than zero.
+		 */
 		while (k > 0) {
 			result += k % 10;
 			k = k / 10;
