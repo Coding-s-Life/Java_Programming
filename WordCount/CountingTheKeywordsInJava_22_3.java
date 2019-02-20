@@ -38,25 +38,27 @@ public class CountingTheKeywordsInJava_22_3 {
 				Set<String> setOfTokensFound = new TreeSet<String>();
 
 				while ((str = br.readLine()) != null) {
-					tokens = new StringTokenizer(str, " .,:;()[]{}");
-					String nextToken = tokens.nextToken();
-					System.out.println(nextToken);
-
-					if (nextToken != null) {
-						setOfTokensFound.add(nextToken);
+					if (tokens != null && tokens.countTokens() > 0) {
+						tokens = new StringTokenizer(str, " .,:;()[]{}");
+						String nextToken = tokens.nextToken();
+						System.out.println(nextToken);
+	
+						if (nextToken != null) {
+							setOfTokensFound.add(nextToken);
+						}
 					}
-				}
-				br.close();
-
-				for (String nextToken : setOfTokensFound) {
-					if (setOfKeywords.contains(nextToken)) {
-						setOfKeywordsFound.add(nextToken);
-						countOfKeywords++;
+					br.close();
+	
+					for (String nextToken : setOfTokensFound) {
+						if (setOfKeywords.contains(nextToken)) {
+							setOfKeywordsFound.add(nextToken);
+							countOfKeywords++;
+						}
 					}
-				}
-				System.out.println("\n" + countOfKeywords + " Keywords are found: ");
-				for (String keyword : setOfKeywordsFound) {
-					System.out.println(keyword);
+					System.out.println("\n" + countOfKeywords + " Keywords are found: ");
+					for (String keyword : setOfKeywordsFound) {
+						System.out.println(keyword);
+					}
 				}
 			}catch (FileNotFoundException e) {
 				e.printStackTrace();
