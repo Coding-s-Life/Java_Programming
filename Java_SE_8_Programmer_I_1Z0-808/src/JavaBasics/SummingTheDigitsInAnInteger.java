@@ -14,13 +14,15 @@ The sum of the digits is 27
 
 public class SummingTheDigitsInAnInteger {
 	public static void main(String[] args) {
-		int k = 12311;
 		int result = 0;
+		Scanner scan = new Scanner(System.in);
+		int k = scan.nextInt();
 		/*
-		 * Here we loop to sum the result if value of k is more than zero.
-		 * The 'k' is divided using remainder operator to get the remainder
--        * of division and then divided to get the actual value after division.
-		 */
+		* Here we loop to sum the result if value of k is more than zero.
+		* The 'k' is divided using remainder operator to get the remainder
+-       * of division and then divided to get the actual value after division.
+		*/
+		scan.close();
 		while (k > 0) {
 			result += k % 10;
 			k = k / 10;
