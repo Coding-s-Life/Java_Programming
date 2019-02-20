@@ -5,17 +5,21 @@ package JavaBasics;
 the sum of all its digits is 14.
 Hint: Use the % operator to extract digits, and use the / operator to remove the
 extracted digit. For instance, 932 % 10 = 2 and 932 / 10 = 93.
+
 Here is a sample run:
+
 Enter a number between 0 and 1000:
 The sum of the digits is 27
  */
+
 public class SummingTheDigitsInAnInteger {
 	public static void main(String[] args) {
 		int k = 12311;
 		int result = 0;
 		/*
-		 * Here we loop to sum the result if value of k is more than zero. The 'k' is divided using remainder operator to get the remainder 
-		 of division and then divided to get the actual value after division.
+		 * Here we loop to sum the result if value of k is more than zero.
+		 * The 'k' is divided using remainder operator to get the remainder
+-        * of division and then divided to get the actual value after division.
 		 */
 		while (k > 0) {
 			result += k % 10;
