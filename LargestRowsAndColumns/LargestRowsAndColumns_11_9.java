@@ -53,7 +53,7 @@ public class LargestRowsAndColumns_11_9 {
 			}
 			System.out.println();
 		}		
-		
+		// For Row
 		for(int row = 0; row <arraySize; row++){
 			for (int column = 0; column <arraySize; column++){
 				if (twoDimArray[row][column] == 1) {
